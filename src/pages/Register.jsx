@@ -1,13 +1,12 @@
 import React from 'react'
 import {  Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
-import Logo from '../assets/logo.jpg'
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { registerRoute } from '../utils/APIRoutes';
-import Lottie from 'lottie-react'   
 import logo1 from '../assets/logo1.avif'
+
 
 function Register() {
     const navigate = useNavigate();
@@ -85,20 +84,18 @@ function Register() {
 
   return (
     <>
-    <FormContainer>
-    
-        <div className='imager' style={{width:580 } }>
-           <img src={logo1} alt="logo1" style={{width:580 }}/>
-        </div>    
-        <div>
-            
+        <FormContainer>    
+            <div className='imager' style={{width:580 } }>
+            <img src={logo1} alt="logo1" style={{width:580 }}/>
+            </div>    
+            <div>            
                 <form onSubmit={(e)=>handleSubmit(e)}>
                     <div className='brand'>
-                      
+                        
                         <h1>Register </h1>
                     </div>
-                   
-                   
+                    
+                    
                         <input type="text" placeholder="Username"  name='username' onChange={(e)=>{
                             handleChange(e)
                         }} />
@@ -120,14 +117,10 @@ function Register() {
 
                     <button type="submit" >Register</button>
                     <span>Already have an account ? <Link to="/login-page">Login</Link></span>
-                </form>
-           
-        </div>
-    
-    </FormContainer>
-    <ToastContainer />
-
-
+                </form>           
+            </div>    
+        </FormContainer>
+        <ToastContainer />
     </>
   )
 }
@@ -140,7 +133,6 @@ const  FormContainer = styled.div`
     flex-direction: row;
     justify-content: start;    
     gap: 13rem;
-    
     
     .brand{
         display: flex;        

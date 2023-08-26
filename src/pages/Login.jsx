@@ -6,17 +6,14 @@ import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { loginRoute } from '../utils/APIRoutes';
-import Lottie from 'lottie-react'
+
 
 function Login() {
     const navigate = useNavigate();
 
     const [values, setValues] = React.useState({
-        username: '',
-        email: '',
+        username: '',        
         password: '',
-        confirmPassword: ''
-
     });
 
     const toastOptions = {
@@ -47,7 +44,7 @@ function Login() {
     }
     //validation function 
     const handleValidation = () => {
-        const { username, password, confirmPassword } = values;
+        const { username, password} = values;
         if(password ===""){
             toast.error("Password and Confirm Password should be same",toastOptions);
             return false;
@@ -75,35 +72,31 @@ function Login() {
 
   return (
     <>
-    <FormContainer>
-        <form onSubmit={(e)=>handleSubmit(e)}>
-            <div className='brand'>
-                 
-                <h1>Login </h1>
-            </div>
+        <FormContainer>
+            <form onSubmit={(e)=>handleSubmit(e)}>
+                <div className='brand'>
+                    
+                    <h1>Login </h1>
+                </div>
 
-    
-            <input type="text" placeholder="Username"  name='username' onChange={(e)=>{
-                handleChange(e)
-            }} />
-            
+        
+                <input type="text" placeholder="Username"  name='username' onChange={(e)=>{
+                    handleChange(e)
+                }} />
+                
 
-            <input type="password" placeholder="password"  name='password' onChange={(e)=>{
-                handleChange(e)
-            }} />
+                <input type="password" placeholder="password"  name='password' onChange={(e)=>{
+                    handleChange(e)
+                }} />
 
-            
-
-            <button type="submit" >Login</button>
-            <span>Don't have an account ? <Link to="/">Register</Link></span>
-        </form>
-        <div className='imager' style={{width:510 } }>
-           <img className='img pt-12' src={logo} />
-        </div> 
-    </FormContainer>
-    <ToastContainer />
-
-
+                <button type="submit" >Login</button>
+                <span>Don't have an account ? <Link to="/">Register</Link></span>
+            </form>
+            <div className='imager' style={{width:510 } }>
+            <img className='pt-12' src={logo} alt='logo' />
+            </div> 
+        </FormContainer>
+        <ToastContainer />
     </>
   )
 }
@@ -114,8 +107,7 @@ const  FormContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: start;    
-    gap: 10rem;
-    
+    gap: 10rem;   
     
     .brand{
         display: flex;        

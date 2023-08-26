@@ -15,15 +15,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:true,
 
-    },
-    profilePicture: {
-        type: Boolean,
-        default:false
-    },
-    avatarImage: {
-        type: String,
-        default:""
-    },
+    },      
 });
 
 module.exports = mongoose.model("Users", userSchema);
