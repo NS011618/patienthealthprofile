@@ -144,3 +144,52 @@ const FormContainer = styled.div`
 `;
 
 export default Inputdata
+/*
+import React, { useState } from 'react';
+import { inputRoute } from '../utils/APIRoutes';
+function FileUpload() {
+  const [file, setFile] = useState(null);
+  const [message, setMessage] = useState('');
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+  };
+
+  const handleUpload = async () => {
+    if (!file) {
+      setMessage('Please select a CSV file.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await fetch(inputRoute, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setMessage('CSV file uploaded successfully.');
+      } else {
+        setMessage('Error uploading CSV file.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('An error occurred while uploading the CSV file.');
+    }
+  };
+
+  return (
+    <div>
+      <h2>CSV File Upload</h2>
+      <input type="file" accept=".csv" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+export default FileUpload;*/
